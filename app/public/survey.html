@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/main.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<h3>Name</h3>
+            <input type="text" id="name" class="form-control" required="">
+            <h3>Link to photo</h3>
+            <input type="text" id="photo" class="form-control" required="">
+
+        <div class="question-block">
+            <div class="question">
+                 <h2>What is your idea of a good friday night?</h2>
+            </div>
+
+            <div class="choices">
+                <form action="">
+                    <div class="row">
+                        <div class="choice-box">
+                            <p class="choice-text"><input id="q1" type="radio" name="q1" value="1"> Going to the Movies</p>
+                        </div>
+                    
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q1" type="radio" name="q1" value="2"> Staying Home</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q1" type="radio" name="q1" value="3"> Going to the Club</p>
+                        </div>
+                    
+              
+                    </div>              
+                </form>
+            </div>
+        </div>    
+          
+        <div class"question-block">   
+            <div class="question">
+                <h2>What is your favorite color</h2>
+            </div>
+
+            <div class="choices">
+                <form action="">
+                    <div class="row">
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q2" type="radio" name="q2" value="1"> Blue</p> 
+                        </div>    
+                    
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q2" type="radio" name="q2" value="2"> Red</p>
+                        </div>
+                    </div> 
+                    
+                    <div class="row">
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q2" type="radio" name="q2" value="3"> Green</p>
+                        </div>
+                       
+                    </div>      
+                </form>
+            </div>  
+        </div>         
+        
+        <div class"question-block">   
+            <div class="question">
+               <h2>Whats your favorite type of music?</h2>
+            </div>
+            
+            <div class="choices">
+               <form action="">
+                    <div class="row">
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q3" type="radio" name="q3" value="1">Rock</p>
+                        </div>
+                    
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q3" type="radio" name="q3" value="2">Country</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="choice-box">
+                            
+                            <p class="choice-text"><input id="q3" type="radio" name="q3" value="3">Rap</p>
+                        </div>
+                    
+                    </div>    
+                </form>   
+            </div>
+        </div>
+                
+    </div>
+    <br><br>
+
+    <button class="button" id="submit" type="submit" on click="window.location.href='result.html'">Submit</button>
+    
+<br><br><br><br><br>
+
+<script>
+
+//once submit is clicked it creates a var userData with the name, photolink, and question values
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+
+        var userData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+          ]
+        };
+
+//then userData is sent to friends.  I don't know what friends is.  Is that refering to the friends.js file?
+        $.post("/api/friends", userData, function(data) {
+
+
+        });
+
+    });
+  
+
+</script>
+
+<!--After that the data is sent somewhere, but I'm not sure how to call it-->
+
+</body>
+</html>
