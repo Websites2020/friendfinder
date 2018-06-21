@@ -26,19 +26,19 @@
                 <form action="">
                     <div class="row">
                         <div class="choice-box">
-                            <p class="choice-text"><input id="q1" type="radio" name="q1" value="1"> Going to the Movies</p>
+                            <p class="choice-text"><input class="q1" type="radio" name="q1" value="1"> Going to the Movies</p>
                         </div>
                     
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q1" type="radio" name="q1" value="2"> Staying Home</p>
+                            <p class="choice-text"><input class="q1" type="radio" name="q1" value="2"> Staying Home</p>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q1" type="radio" name="q1" value="3"> Going to the Club</p>
+                            <p class="choice-text"><input class="q1" type="radio" name="q1" value="3"> Going to the Club</p>
                         </div>
                     
               
@@ -57,19 +57,19 @@
                     <div class="row">
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q2" type="radio" name="q2" value="1"> Blue</p> 
+                            <p class="choice-text"><input class="q2" type="radio" name="q2" value="1"> Blue</p> 
                         </div>    
                     
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q2" type="radio" name="q2" value="2"> Red</p>
+                            <p class="choice-text"><input class="q2" type="radio" name="q2" value="2"> Red</p>
                         </div>
                     </div> 
                     
                     <div class="row">
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q2" type="radio" name="q2" value="3"> Green</p>
+                            <p class="choice-text"><input class="q2" type="radio" name="q2" value="3"> Green</p>
                         </div>
                        
                     </div>      
@@ -87,19 +87,19 @@
                     <div class="row">
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q3" type="radio" name="q3" value="1">Rock</p>
+                            <p class="choice-text"><input class="q3" type="radio" name="q3" value="1">Rock</p>
                         </div>
                     
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q3" type="radio" name="q3" value="2">Country</p>
+                            <p class="choice-text"><input class="q3" type="radio" name="q3" value="2">Country</p>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="choice-box">
                             
-                            <p class="choice-text"><input id="q3" type="radio" name="q3" value="3">Rap</p>
+                            <p class="choice-text"><input class="q3" type="radio" name="q3" value="3">Rap</p>
                         </div>
                     
                     </div>    
@@ -124,15 +124,15 @@
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
+            $(".q1").val(),
+            $(".q2").val(),
+            $(".q3").val(),
           ]
         };
 
 //then userData is sent to friends.  I don't know what friends is.  Is that refering to the friends.js file?
-        $.post("/api/friends", userData, function(data) {
-
+        $.post("/api/friends", userData, function(daniel) {
+                alert(daniel)
 
         });
 
